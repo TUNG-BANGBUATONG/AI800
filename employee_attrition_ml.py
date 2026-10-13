@@ -250,7 +250,7 @@ rf_model = models["Random Forest"]["model"]
 feature_importance = pd.Series(rf_model.feature_importances_, index=X.columns).sort_values(ascending=False)
 
 plt.figure(figsize=(10, 8))
-sns.barplot(x=feature_importance.head(15).values, y=feature_importance.head(15).index, palette="viridis")
+sns.barplot(x=feature_importance.head(15).values, y=feature_importance.head(15).index, palette="viridis", hue=feature_importance.head(15).index, legend=False)
 plt.title("Top 15 Most Important Features (Random Forest)", fontsize=14, fontweight="bold")
 plt.xlabel("Relative Importance Score", fontsize=12)
 plt.tight_layout()
